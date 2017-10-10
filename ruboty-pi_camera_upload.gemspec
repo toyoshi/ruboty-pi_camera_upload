@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["toyoshi"]
   spec.email         = ["toyosystem@gmail.com"]
 
-  spec.summary       = 'Raspberry Piのカメラモジュールで写真をとってSlackにアップロードするRubotyプラグイン'.}
+  spec.summary       = 'Ruboty plugin to post photo by Raspberry Pi'
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -30,6 +30,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "slack-api"
-  spec.add_development_dependency "faraday"
+  spec.add_dependency "slack-api"
+  spec.add_dependency "faraday"
 end
