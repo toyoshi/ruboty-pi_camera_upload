@@ -6,11 +6,10 @@ require 'ruboty/pi_camera_upload/version'
 Gem::Specification.new do |spec|
   spec.name          = "ruboty-pi_camera_upload"
   spec.version       = Ruboty::PiCameraUpload::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["toyoshi"]
+  spec.email         = ["toyosystem@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = 'Raspberry Piのカメラモジュールで写真をとってSlackにアップロードするRubotyプラグイン'.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -31,4 +30,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "slack-api"
+  spec.add_development_dependency "faraday"
 end
