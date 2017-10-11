@@ -8,6 +8,8 @@ module Ruboty
       on(/take photo|ワンタイムトークン/i, name: 'pi_camera_upload', description: "ラズパイの写真をアップロードします。")
 
       def pi_camera_upload(message)
+        message.reply('撮影してくるから、ちょっと待ってね')
+
         Slack.configure do |config|
           config.token = ENV['SLACK_TOKEN']
         end
