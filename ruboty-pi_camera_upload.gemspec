@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ruboty/pi_camera_upload/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ruboty-pi_camera_upload"
+  spec.name          = "gi"
   spec.version       = Ruboty::PiCameraUpload::VERSION
   spec.authors       = ["toyoshi"]
   spec.email         = ["toyosystem@gmail.com"]
 
   spec.summary       = 'Ruboty plugin to post photo by Raspberry Pi'
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/toyoshi/ruboty-pi_camera_upload"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
