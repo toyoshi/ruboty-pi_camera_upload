@@ -18,7 +18,7 @@ module Ruboty
           file_name = "#{dir}/image.png"
           system(`raspistill -w 480 -h 360 -o #{file_name}`)
           Slack.files_upload(
-            filename: 'Raspberry Pi Camera Image',
+            filename: 'Raspberry Pi Camera Image.png',
             file: Faraday::UploadIO.new(file_name, 'image/png'),
             channels: "##{ENV['PI_CAMERA_UPLOAD_CHANNEL']}",
             initial_comment: ''
