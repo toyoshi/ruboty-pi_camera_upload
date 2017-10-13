@@ -12,9 +12,9 @@ module Ruboty
 
         Dir.mktmpdir do |dir|
           file_name = "#{dir}/image.png"
-          
+
           begin
-            system(`raspistill -t 0 -w 480 -h 360 -o #{file_name}`)
+            system(`raspistill -t 500 -w 480 -h 360 -o #{file_name}`)
           rescue
             message.reply('写真の撮影ができなかったよ')
             return
