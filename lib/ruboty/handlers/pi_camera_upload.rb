@@ -13,10 +13,16 @@ module Ruboty
         Slack.configure do |config|
           config.token = ENV['SLACK_TOKEN']
         end
-
+p message
         Dir.mktmpdir do |dir|
           file_name = "#{dir}/image.png"
-          system(`raspistill -t 0 -w 480 -h 360 -o #{file_name}`)
+          begin
+            system(`raspistill -t 0 -w 480 -h 360 -o #{file_name}`)
+          rescue
+            message.reply('写真の撮影ができなかったよ')
+            return
+          end
+
           Slack.files_upload(
             filename: 'Raspberry Pi Camera Image.png',
             file: Faraday::UploadIO.new(file_name, 'image/png'),
