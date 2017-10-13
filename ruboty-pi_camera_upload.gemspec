@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ruboty/pi_camera_upload/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "gi"
+  spec.name          = "ruboty-pi_camera_upload"
   spec.version       = Ruboty::PiCameraUpload::VERSION
   spec.authors       = ["toyoshi"]
   spec.email         = ["toyosystem@gmail.com"]
