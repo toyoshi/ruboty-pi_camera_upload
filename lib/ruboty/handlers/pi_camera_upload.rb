@@ -20,7 +20,7 @@ module Ruboty
           file_name = "#{dir}/image.png"
 
           begin
-            system(`raspistill -t 500 -w 480 -h 360 -o #{file_name}`)
+            system(`raspistill -rot 90 -t 500 -w 800 -h 800 -o #{file_name}`)
           rescue
             message.reply('写真の撮影ができなかったよ')
             return
