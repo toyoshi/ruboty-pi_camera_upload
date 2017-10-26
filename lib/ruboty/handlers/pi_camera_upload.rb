@@ -10,6 +10,12 @@ module Ruboty
       def pi_camera_upload(message)
         message.reply('撮影してくるから、ちょっと待ってね')
 
+        channel_name = unless message.original[:channel].nil?
+            "##{message.original[:channel]['name']}"
+          else
+            "@#{message.from_name}"
+          end
+
         Dir.mktmpdir do |dir|
           file_name = "#{dir}/image.png"
 
@@ -20,11 +26,11 @@ module Ruboty
             return
           end
 
-          upload_photo(file_name)
+          upload_photo(channel_name, file_name)
         end
       end
 
-      def upload_photo(file_name)
+      def upload_photo(channel_name, file_name)
         Slack.configure do |config|
           config.token = ENV['SLACK_TOKEN']
         end
@@ -32,7 +38,7 @@ module Ruboty
         Slack.files_upload(
           filename: 'Raspberry Pi Camera Image.png',
           file: Faraday::UploadIO.new(file_name, 'image/png'),
-          channels: "##{ENV['PI_CAMERA_UPLOAD_CHANNEL']}",
+          channels: channel_name,
           initial_comment: ''
         )
       end
