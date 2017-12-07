@@ -10,7 +10,7 @@ module Ruboty
       def pi_camera_upload(message)
         message.reply('撮影してくるから、ちょっと待ってね')
 
-        channel_name = "@#{ENV['SLACK_ROOM']}"
+        channel_name = "##{ENV['SLACK_ROOM']}"
 
         Dir.mktmpdir do |dir|
           file_name = "#{dir}/image.png"
