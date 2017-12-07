@@ -31,11 +31,11 @@ module Ruboty
       end
 
       def upload_photo(channel_name, file_name)
-        Slack.configure do |config|
+        ::Slack.configure do |config|
           config.token = ENV['SLACK_TOKEN']
         end
 
-        Slack.files_upload(
+        ::Slack.files_upload(
           filename: 'Raspberry Pi Camera Image.png',
           file: Faraday::UploadIO.new(file_name, 'image/png'),
           channels: channel_name,
