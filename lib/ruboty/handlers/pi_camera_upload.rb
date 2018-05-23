@@ -18,7 +18,7 @@ module Ruboty
           file_name = "#{dir}/image.png"
 
           begin
-            system(`raspistill -rot 90 -t 500 -w 800 -h 800 -o #{file_name}`)
+            system(`raspistill #{ENV['CAMERA_OPTIONS']} -o #{file_name}`)
           rescue
             message.reply('写真の撮影ができなかったよ')
             return
